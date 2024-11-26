@@ -4,14 +4,14 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #000000; /* Fondo negro */
-    color: #ffffff; /* Texto blanco por contraste */
+    background-color: #f5f5f5; /* Fondo gris claro */
+    color: #333333; /* Texto oscuro */
     scroll-behavior: smooth; /* Suaviza el desplazamiento */
 }
 
 /* Header y Navegación */
 header {
-    background-color: #b6901f; /* Fondo dorado */
+    background-color: #bb9b31; /* Fondo dorado */
     color: #000000; /* Texto negro */
     padding: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -50,11 +50,10 @@ nav ul li a:hover {
     transform: scale(1.1);
 }
 
-/* Logo */
 .logo {
-    max-width: 150px;  /* Ajuste del tamaño del logo */
-    height: auto;      /* Mantener proporciones */
-    margin-right: 20px; /* Espacio a la derecha para evitar que quede pegado */
+    max-width: 150px;
+    height: auto;
+    margin-right: 20px;
 }
 
 /* Secciones */
@@ -63,10 +62,10 @@ section {
     text-align: center;
     margin: 1rem auto;
     max-width: 900px;
-    background-color: #000000; /* Fondo negro */
-    color: #ffffff; /* Texto blanco */
+    background-color: #ffffff; /* Fondo blanco */
+    color: #333333; /* Texto oscuro */
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(182, 144, 31, 0.3); /* Sombra dorada */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
     transition: transform 0.3s ease-in-out;
 }
 
@@ -77,13 +76,6 @@ section:hover {
 section h2 {
     color: #b6901f; /* Títulos dorados */
     margin-bottom: 1rem;
-}
-
-.imagen-principal {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(182, 144, 31, 0.5); /* Sombra dorada */
 }
 
 /* Galería */
@@ -115,66 +107,160 @@ section h2 {
     border-bottom: 2px solid #b6901f;
 }
 
-.galeria p {
-    margin: 10px 0;
-    color: #b6901f;
-    font-weight: bold;
+/* Sección Misión, Visión y Valores */
+#mision-vision-valores {
+    padding: 3rem;
+    background-color: #fdfdfd; /* Fondo gris muy claro */
+    color: #333333; /* Texto oscuro */
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    margin: 2rem auto;
+    max-width: 1100px;
 }
 
-/* Formulario de Contacto */
-form {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 1rem;
-    background-color: #000000;
-    border: 2px solid #b6901f;
+#mision-vision-valores h2 {
+    color: #b6901f; /* Título dorado */
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.filosofia-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.filosofia-item {
+    background-color: #ffffff; /* Fondo blanco */
+    border: 2px solid #b6901f; /* Borde dorado */
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(182, 144, 31, 0.5);
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-form label {
-    display: block;
-    margin: 10px 0 5px;
-    color: #b6901f;
+.filosofia-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(182, 144, 31, 0.5); /* Sombra dorada */
+}
+
+.filosofia-item h3 {
+    color: #b6901f; /* Títulos dorados */
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.filosofia-item p, .filosofia-item ul {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555555; /* Texto gris oscuro */
+    text-align: justify;
+}
+
+.filosofia-item ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* Productos */
+#productos {
+    padding: 3rem;
+    text-align: center;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#productos h2 {
+    color: #b6901f; /* Título dorado */
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
     font-weight: bold;
 }
 
-form input, form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #b6901f;
-    border-radius: 5px;
-    background-color: #000000;
-    color: #ffffff;
+.descripcion-productos {
+    color: #555555; /* Texto gris */
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    font-style: italic;
 }
 
-form input:focus, form textarea:focus {
-    outline: none;
-    border-color: #ffffff;
+.productos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
 }
 
-form button {
-    display: block;
+.producto-item {
+    background-color: #ffffff; /* Fondo blanco */
+    border: 2px solid #b6901f; /* Borde dorado */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.producto-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(182, 144, 31, 0.6);
+}
+
+.producto-img {
     width: 100%;
-    padding: 10px;
-    background-color: #b6901f;
-    color: #000000;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #b6901f;
+}
+
+.producto-info {
+    padding: 1rem;
+    color: #333333;
+}
+
+.producto-info h3 {
+    font-size: 1.3rem;
+    color: #b6901f; /* Título dorado */
+    margin-bottom: 0.8rem;
+}
+
+.producto-info p {
+    font-size: 1rem;
+    color: #555555;
+    line-height: 1.4;
+}
+
+/* Botones */
+.btn-producto {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #b6901f; /* Fondo dorado */
+    color: #000000; /* Texto negro */
     font-weight: bold;
-    border: none;
+    text-decoration: none;
     border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s, transform 0.2s;
 }
 
-form button:hover {
+.btn-producto:hover {
     background-color: #ffffff;
     color: #b6901f;
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    background-color: #f5f5f5; /* Fondo gris claro */
+    color: #333333; /* Texto oscuro */
+    text-align: center;
+    padding: 1rem 0;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsividad */
 @media (max-width: 768px) {
-    header nav ul {
+    nav ul {
         flex-direction: column;
         text-align: center;
     }
@@ -187,231 +273,16 @@ form button:hover {
         max-width: 100%;
     }
 
-    form {
-        padding: 0.5rem;
-    }
-
-    .logo {
-        max-width: 100px;  /* Reducir tamaño del logo en pantallas pequeñas */
-    }
-}
-/* Estilo de la sección 'Sobre Nosotros' */
-#sobre-nosotros {
-    background-color: #1a1a1a; /* Fondo oscuro para contrastar */
-    color: #ffffff; /* Texto blanco */
-    padding: 3rem 1rem; /* Espaciado generoso */
-    margin: 2rem auto;
-    max-width: 1100px; /* Limitar el ancho */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 8px 15px rgba(182, 144, 31, 0.4); /* Sombra dorada */
-    text-align: center;
-}
-
-/* Título */
-#sobre-nosotros h2 {
-    color: #b6901f; /* Dorado brillante para destacar el título */
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-}
-
-/* Descripción */
-#sobre-nosotros p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 2rem;
-}
-
-/* Contenedor de texto e imágenes */
-.sobre-nosotros-contenedor {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin-top: 2rem;
-}
-
-/* Imagen de la empresa */
-.sobre-nosotros-imagen {
-    max-width: 45%;
-    border-radius: 10px;
-    box-shadow: 0 8px 15px rgba(182, 144, 31, 0.3); /* Sombra dorada */
-    overflow: hidden;
-}
-
-.sobre-nosotros-imagen img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 10px;
-}
-
-/* Espacio para el texto adicional (opcional) */
-.sobre-nosotros-texto {
-    max-width: 50%;
-}
-
-/* Botones de acción en la sección 'Sobre Nosotros' */
-.sobre-nosotros-botones {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-top: 2rem;
-}
-
-.sobre-nosotros-botones a {
-    background-color: #b6901f; /* Fondo dorado */
-    color: #000000; /* Texto negro */
-    font-weight: bold;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-.sobre-nosotros-botones a:hover {
-    background-color: #ffffff; /* Fondo blanco en hover */
-    color: #b6901f; /* Texto dorado en hover */
-    transform: scale(1.1); /* Efecto de escalado */
-}
-/* Sección Productos */
-#productos {
-    padding: 3rem;
-    text-align: center;
-    background-color: #000000; /* Fondo negro */
-    color: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(182, 144, 31, 0.4);
-}
-
-#productos h2 {
-    color: #b6901f; /* Título dorado */
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
-    font-weight: bold;
-}
-
-.descripcion-productos {
-    color: #f5f5f5;
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    font-style: italic;
-}
-
-/* Contenedor de productos */
-.productos-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    justify-items: center;
-    margin-top: 2rem;
-}
-
-/* Estilo para cada producto */
-.producto-item {
-    background-color: #1a1a1a; /* Fondo oscuro para los productos */
-    border: 2px solid #b6901f; /* Borde dorado */
-    border-radius: 15px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 280px; /* Tamaño ajustado para cada producto */
-}
-
-.producto-item:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 15px rgba(182, 144, 31, 0.6); /* Sombra más pronunciada */
-}
-
-.producto-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 2px solid #b6901f;
-}
-
-.producto-info {
-    padding: 1rem;
-    color: #ffffff;
-}
-
-.producto-info h3 {
-    font-size: 1.3rem;
-    color: #b6901f; /* Título dorado */
-    margin-bottom: 0.8rem;
-}
-
-.producto-info p {
-    font-size: 1rem;
-    color: #ddd;
-    line-height: 1.4;
-}
-
-/* Ajustes de responsividad */
-@media (max-width: 768px) {
     .productos-container {
-        grid-template-columns: 1fr 1fr; /* Dos columnas en pantallas pequeñas */
+        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
     }
 
     .producto-item {
-        width: 90%; /* Ajusta el tamaño de los productos en pantallas más pequeñas */
+        width: 90%;
+        margin: 0 auto; /* Centrado */
     }
 }
-/* Estilo de los botones en la sección de productos */
-.btn-producto {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #b6901f; /* Fondo dorado */
-    color: #000000; /* Texto negro */
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s, transform 0.2s;
-    text-align: center;
-    width: auto; /* No forzar el ancho al 100%, deja que el contenido ajuste el tamaño */
-    box-sizing: border-box; /* Para asegurarnos de que el padding no afecte el tamaño final */
-}
 
-.btn-producto:hover {
-    background-color: #ffffff; /* Fondo blanco cuando pasa el mouse */
-    color: #b6901f; /* Texto dorado */
-    transform: scale(1.1);
-}
 
-/* Ajustes de estilo para el contenedor de los productos */
-.producto-item {
-    background-color: #1a1a1a; /* Fondo oscuro para los productos */
-    border: 2px solid #b6901f; /* Borde dorado */
-    border-radius: 15px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 280px; /* Tamaño ajustado para cada producto */
-    text-align: center; /* Alineación del contenido */
-    margin: 0 auto; /* Centra cada producto */
-}
 
-.producto-info {
-    padding: 1rem;
-    color: #ffffff;
-}
 
-.producto-info h3 {
-    font-size: 1.3rem;
-    color: #b6901f; /* Título dorado */
-    margin-bottom: 0.8rem;
-}
-
-.producto-info p {
-    font-size: 1rem;
-    color: #ddd;
-    line-height: 1.4;
-}
-/* Footer */
-footer {
-    text-align: center;
-    background-color: #b6901f; /* Fondo dorado */
-    color: #000000; /* Texto negro */
-    padding: 1rem 0;    
-    margin-top: 2rem;
-    box-shadow: 0 -4px 6px rgba(182, 144, 31, 0.3);
-}
