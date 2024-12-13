@@ -9,6 +9,141 @@ body {
     scroll-behavior: smooth; /* Suaviza el desplazamiento */
 }
 
+.banner-container {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 60%;             /* Ajusta al 70% del ancho de la ventana */
+    max-width: 600px;       /* Máximo ancho del banner */
+    height: 300px;          /* Altura fija del banner */
+    overflow: hidden;       /* Oculta el contenido desbordado */
+    border-radius: 10px;    /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para resaltar */
+}
+
+/* Ajuste del Banner */
+.center-banner-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; /* Elimina los espacios extra */
+    padding: 2rem 0; /* Consistencia con otras secciones */
+    background-color: #ffffff; /* Fondo blanco */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.banner-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;  /* Se redujo el tamaño del banner */
+    height: 350px;
+    overflow: hidden; /* Oculta contenido fuera del contenedor */
+    border-radius: 15px;
+    background-color: #f9f9f9; /* Fondo gris claro */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo de cada diapositiva */
+.banner-slide {
+    position: absolute; /* Superpone las diapositivas */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Oculta las diapositivas no activas */
+    transition: opacity 1s ease-in-out; /* Transición suave al cambiar de diapositiva */
+}
+
+/* Diapositiva activa */
+.banner-slide.active {
+    opacity: 1; /* Muestra la diapositiva activa */
+    z-index: 1; /* Asegura que esté encima */
+}
+
+/* Estilo de las imágenes dentro del banner */
+/* Ajustar estilo de las imágenes dentro del banner */
+.banner-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ajuste para que la imagen no se recorte */
+    border: 5px solid rgba(182, 144, 31, 0.8); /* Marco dorado */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para resaltar */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto de animación */
+}
+
+/* Animación al pasar el mouse */
+.banner-slide img:hover {
+    transform: scale(1.05); /* Amplía ligeramente la imagen */
+    box-shadow: 0 6px 15px rgba(182, 144, 31, 0.5); /* Sombra más destacada */
+}
+
+/* Botones de navegación */
+.banner-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(182, 144, 31, 0.8); /* Fondo dorado semitransparente */
+    border: none;
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    z-index: 10;
+}
+
+.banner-button:hover {
+    background-color: rgba(182, 144, 31, 1); /* Fondo dorado sólido */
+    transform: scale(1.1); /* Amplía el botón al pasar el mouse */
+}
+
+.prev-button {
+    left: 15px; /* Posiciona el botón izquierdo */
+}
+
+.next-button {
+    right: 15px; /* Posiciona el botón derecho */
+}
+
+/* Indicadores del banner */
+.banner-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 10;
+}
+
+.banner-indicators button {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.6); /* Indicadores desactivados */
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.banner-indicators button.active {
+    background-color: rgba(182, 144, 31, 1); /* Indicador activo */
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .banner-container {
+        height: 250px; /* Reduce la altura en dispositivos pequeños */
+    }
+    .banner-button {
+        font-size: 1.5rem;
+        padding: 8px 12px;
+    }
+}
+
 /* Header y Navegación */
 header {
     background-color: #bb9b31; /* Fondo dorado */
@@ -19,7 +154,7 @@ header {
     top: 0;
     z-index: 1000;
     display: flex;
-    justify-content: center; /* Centrado del contenido */
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -53,7 +188,6 @@ nav ul li a:hover {
 .logo {
     max-width: 150px;
     height: auto;
-    margin-right: 20px;
 }
 
 /* Secciones */
@@ -88,6 +222,7 @@ section h2 {
 }
 
 .galeria .imagen {
+    display: block;
     max-width: 300px;
     text-align: center;
     border: 2px solid #b6901f;
@@ -102,9 +237,11 @@ section h2 {
 }
 
 .galeria img {
-    width: 100%;
-    display: block;
-    border-bottom: 2px solid #b6901f;
+    width: 300px;         /* Ancho fijo para todas las imágenes */
+    height: 250px;        /* Altura fija para todas las imágenes */
+    object-fit: cover;    /* Recorta partes de la imagen si es necesario para llenar el espacio */
+    display: block;       /* Elimina espacios en línea alrededor de la imagen */
+    margin: 0 auto;       /* Centra las imágenes horizontalmente */
 }
 
 /* Sección Misión, Visión y Valores */
@@ -207,10 +344,11 @@ section h2 {
 }
 
 .producto-img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 2px solid #b6901f;
+    width: 300px;         /* Ancho fijo para todas las imágenes */
+    height: 250px;        /* Altura fija para todas las imágenes */
+    object-fit: cover;    /* Recorta partes de la imagen si es necesario para llenar el espacio */
+    display: block;       /* Elimina espacios en línea alrededor de la imagen */
+    margin: 0 auto;       /* Centra las imágenes horizontalmente */
 }
 
 .producto-info {
@@ -258,31 +396,13 @@ footer {
     box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsividad */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .galeria {
-        flex-direction: column;
-    }
-
-    .galeria .imagen {
-        max-width: 100%;
-    }
-
-    .productos-container {
-        grid-template-columns: 1fr; /* Una columna en pantallas pequeñas */
-    }
-
-    .producto-item {
-        width: 90%;
-        margin: 0 auto; /* Centrado */
-    }
+footer a {
+    color: #b6901f; /* Texto dorado */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
-
-
-
+footer a:hover {
+    color: #555555; /* Texto gris al pasar el mouse */
+}
